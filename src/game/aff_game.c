@@ -1,37 +1,38 @@
 /*
 ** aff_game.c for sudoki in /home/lefevr_h/Repository/Epitech/First_Year/CPE/sudoki-bi/src/game
-** 
+**
 ** Made by Lefevre Philippe
 ** Login   <lefevr_h@epitech.net>
-** 
+**
 ** Started on  Sat Feb 27 11:51:50 2016 Lefevre Philippe
-** Last update Sat Feb 27 16:25:51 2016 Lefevre Philippe
+** Last update Sat Feb 27 18:01:30 2016 Lefevre Philippe
 */
 
 #include		<stdio.h>
 #include		"sudoki.h"
 
-void			aff_game(int tab[9][9], int valid)
+int			aff_game(int tab[9][9], int valid)
 {
-  int			i;
-  int			j;
+  int			x;
+  int			y;
 
-  i = 0;
+  y = 0;
   printf("|------------------|\n|");
-  while (i < 9)
+  while (y < 9)
     {
-      j = 0;
-      while(j < 9)
+      x = 0;
+      while (x < 9)
         {
 	  if (valid)
-	    printf(((tab[i][j] == 0) ? (" %c") : (" %d")),	\
-		   ((tab[i][j] == 0) ? (' ') : (tab[i][j])));
+	    printf(((tab[y][x] == 0) ? (" %c") : \
+		    (" %d")), (tab[y][x] == 0) ? (' ') : (tab[y][x]));
 	  else
 	    printf(" X");
-          j++;
+          x++;
         }
       printf("|\n|");
-      i++;
+      y++;
     }
   printf("------------------|\n");
+  return (0);
 }

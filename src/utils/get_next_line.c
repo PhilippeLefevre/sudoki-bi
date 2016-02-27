@@ -5,18 +5,18 @@
 ** Login   <lefevr_h@epitech.net>
 **
 ** Started on  Tue Jan  5 02:49:27 2016 Lefevre Philippe
-** Last update Fri Jan 22 16:32:18 2016 Lefevre Philippe
+** Last update Sat Feb 27 17:58:23 2016 Lefevre Philippe
 */
 
 #include		"get_next_line.h"
+#include		"sudoki.h"
 
-char            *my_realloc(char *cur, int n)
+char			*my_realloc(char *cur, int n)
 {
-  char          *res;
-  int		i;
+  char			*res;
+  int			i;
 
-  if ((res = malloc(sizeof(char) * n)) == NULL)
-    return (NULL);
+  res = xmalloc(sizeof(char) * n);
   i = -1;
   while (cur[++i])
     res[i] = cur[i];
@@ -41,8 +41,8 @@ char			*get_next_line(const int fd)
 			|| !(buf[c_buf] == '\0' && end--)) ? (NULL) : (lin)));
       buf[len] = ((c_buf = 0) ? ('\0') : (0));
     }
-  if ((lin = ((c_lin == 0) ? (malloc(sizeof(char) * (READ_SIZE + 1)))
-	      : (my_realloc(lin, (READ_SIZE + c_lin +1))))) == NULL)
+  if ((lin = ((c_lin == 0) ? (xmalloc(sizeof(char) * (READ_SIZE + 1)))
+	      : (my_realloc(lin, (READ_SIZE + c_lin + 1))))) == NULL)
     return (NULL);
   while (buf[c_buf] && buf[c_buf] != '\n')
     lin[c_lin++] = buf[c_buf++];
