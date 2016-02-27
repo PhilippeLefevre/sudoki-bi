@@ -5,10 +5,11 @@
 ## Login   <lefevr_h@epitech.net>
 ## 
 ## Started on  Sat Feb 27 11:40:22 2016 Lefevre Philippe
-## Last update Sat Feb 27 17:53:34 2016 Lefevre Philippe
+## Last update Sat Feb 27 19:13:17 2016 Lefevre Philippe
 ##
 
-NAME		=	sudoki-bi
+NAMEDIR		=	bin
+NAME		=	$(NAMEDIR)/sudoki-bi
 
 INCDIR		=	inc
 SRCDIR		=	src
@@ -37,6 +38,7 @@ title		:
 
 
 $(NAME)		:	$(OBJ)
+			@mkdir -p bin
 			@$(CC) -o $(NAME) $(OBJ) $(CFLAGS) $(LDFLAGS)	&&\
 			$(ECHO) $(GREEN) "[CC]" $(TEAL) $(NAME) $(DEFAULT) || \
 			$(ECHO) $(RED) "[XX]" $(TEAL) $(NAME)
