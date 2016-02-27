@@ -5,7 +5,7 @@
 ** Login   <lefevr_h@epitech.net>
 ** 
 ** Started on  Sat Feb 27 11:43:42 2016 Lefevre Philippe
-** Last update Sat Feb 27 12:04:29 2016 Lefevre Philippe
+** Last update Sat Feb 27 14:15:18 2016 Lefevre Philippe
 */
 
 #include		"sudoki.h"
@@ -14,6 +14,6 @@ int			main(int ac, char **av)
 {
   (void)av;
   if (ac == 1)
-    return (new_game());
-  return (0);
+    new_game();
+  return (write(1, "\n", 1));
 }

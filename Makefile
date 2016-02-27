@@ -5,7 +5,7 @@
 ## Login   <lefevr_h@epitech.net>
 ## 
 ## Started on  Sat Feb 27 11:40:22 2016 Lefevre Philippe
-## Last update Sat Feb 27 12:41:56 2016 Lefevre Philippe
+## Last update Sat Feb 27 15:59:17 2016 Lefevre Philippe
 ##
 
 NAME		=	sudoki-bi
@@ -21,7 +21,7 @@ RED		=	"\033[0;31m"
 
 CC		=	gcc -g
 CFLAGS		+=	-W -Werror -Wall -Wextra
-CFLAGS		+=	-ansi -pedantic
+CFLAGS		+=	-ansi -pedantic -std=c99
 CFLAGS		+=	-I$(INCDIR)
 
 DEPS		=	$(wildcard $(SRCDIR)/*/*.c)
