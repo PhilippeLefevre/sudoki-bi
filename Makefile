@@ -5,7 +5,7 @@
 ## Login   <lefevr_h@epitech.net>
 ## 
 ## Started on  Sat Feb 27 11:40:22 2016 Lefevre Philippe
-## Last update Sat Feb 27 12:01:37 2016 Lefevre Philippe
+## Last update Sat Feb 27 12:41:56 2016 Lefevre Philippe
 ##
 
 NAME		=	sudoki-bi
@@ -19,7 +19,7 @@ GREEN		=	"\033[0;32m"
 TEAL		=	"\033[1;36m"
 RED		=	"\033[0;31m"
 
-CC		=	gcc
+CC		=	gcc -g
 CFLAGS		+=	-W -Werror -Wall -Wextra
 CFLAGS		+=	-ansi -pedantic
 CFLAGS		+=	-I$(INCDIR)
