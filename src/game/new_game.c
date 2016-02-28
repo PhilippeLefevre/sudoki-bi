@@ -5,33 +5,35 @@
 ** Login   <lefevr_h@epitech.net>
 **
 ** Started on  Sat Feb 27 11:50:14 2016 Lefevre Philippe
-** Last update Sat Feb 27 18:10:26 2016 Lefevre Philippe
+** Last update Sun Feb 28 20:01:47 2016 Lefevre Philippe
 */
 
 #include		<stdio.h>
 #include		<string.h>
+#include		<unistd.h>
+#include		<stdlib.h>
 #include		"sudoki.h"
 
 int			new_game(int y, int count)
 {
   int			map[9][9];
-  char			*buf;
+  char			buf[21];
+  int			len;
 
-  while ((buf = get_next_line(0)) != NULL)
+  while ((len = read(0, buf, 21)) > 0)
     {
       if (!(y % 10))
-	if (strcmp(buf, "|------------------|") != 0)
+	if (strncmp(buf, "|------------------|", 20) != 0)
 	  map_error(buf);
       if (y % 10)
-	fill_map(map, buf, y, 0);
+	fill_map(map, buf, y, -1);
       y += 1;
-      free(buf);
       if (y == 11)
 	{
 	  if (count && y)
 	    printf("####################\n");
 	  count += 1;
-	  y = aff_game(map, check_complete(map, 0));
+	  y = aff_game(map, check_complete(map, 0, 0, 0));
 	}
     }
   if (y)

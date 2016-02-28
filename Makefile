@@ -5,7 +5,7 @@
 ## Login   <lefevr_h@epitech.net>
 ## 
 ## Started on  Sat Feb 27 11:40:22 2016 Lefevre Philippe
-## Last update Sat Feb 27 19:13:17 2016 Lefevre Philippe
+## Last update Sun Feb 28 19:30:32 2016 Lefevre Philippe
 ##
 
 NAMEDIR		=	bin
@@ -39,13 +39,13 @@ title		:
 
 $(NAME)		:	$(OBJ)
 			@mkdir -p bin
-			@$(CC) -o $(NAME) $(OBJ) $(CFLAGS) $(LDFLAGS)	&&\
-			$(ECHO) $(GREEN) "[CC]" $(TEAL) $(NAME) $(DEFAULT) || \
+			@$(CC) -o $(NAME) $(OBJ) $(CFLAGS) $(LDFLAGS)	&&	\
+			$(ECHO) $(GREEN) "[CC]" $(TEAL) $(NAME) $(DEFAULT) ||	\
 			$(ECHO) $(RED) "[XX]" $(TEAL) $(NAME)
 
 .c.o		:
-			@$(CC) $(CFLAGS) -c $< -o $@ &&					\
-			$(ECHO) $(GREEN) "[OK]" $(TEAL) $< $(DEFAULT) ||		\
+			@$(CC) $(CFLAGS) -c $< -o $@ &&				\
+			$(ECHO) $(GREEN) "[OK]" $(TEAL) $< $(DEFAULT) ||	\
 			$(ECHO) $(RED) "[XX]" $(TEAL) $< $(DEFAULT)
 
 clean		:
