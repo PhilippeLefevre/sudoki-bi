@@ -5,7 +5,7 @@
 ** Login   <lefevr_h@epitech.net>
 **
 ** Started on  Sat Feb 27 11:50:14 2016 Lefevre Philippe
-** Last update Sun Feb 28 20:01:47 2016 Lefevre Philippe
+** Last update Tue Mar  1 09:40:36 2016 mathilde charpiot
 */
 
 #include		<stdio.h>
@@ -22,9 +22,10 @@ int			new_game(int y, int count)
 
   while ((len = read(0, buf, 21)) > 0)
     {
+      buf[len] = '\0';
       if (!(y % 10))
 	if (strncmp(buf, "|------------------|", 20) != 0)
-	  map_error(buf);
+	  map_error();
       if (y % 10)
 	fill_map(map, buf, y, -1);
       y += 1;
